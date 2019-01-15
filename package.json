@@ -1,0 +1,18 @@
+{
+  "name": "maps-offline",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "servedir . 8989",
+    "start": "node start.js"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "puppeteer": "^1.11.0",
+    "servedir": "^1.0.1",
+    "zeropad": "^1.1.0"
+  }
+}

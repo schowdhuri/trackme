@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple Map</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <style>
+      html, body {
+        font-family: Helvetica, Arial, sans;
+        margin: 0;
+        padding: 0;
+      }
+      #map {
+        height: 100vh;
+        width: 85vw;
+      }
+      .container {
+        display: flex;
+        flex-direction: row;
+      }
+      .controls {
+        padding: 5px;
+      }
+      .form-group {
+        font-size: 0.8rem;
+        margin-bottom: 15px;
+      }
+      .form-group label {
+        font-weight: 700;
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="controls">
+        <div class="form-group">
+          <label for="botLeftLat">BotLeft Lat</label>
+          <input id="botLeftLat" type="number" value="12.654328102965474" />
+        </div>
+        <div class="form-group">
+          <label for="botLeftLng">BotLeft Lng</label>
+          <input id="botLeftLng" type="number" value="75.6774215488233" />
+        </div>
+        <div class="form-group">
+          <label for="topRightLat">TopRight Lat</label>
+          <input id="topRightLat" type="number" value="12.67496675013949" />
+        </div>
+        <div class="form-group">
+          <label for="topRightLng">TopRight Lng</label>
+          <input id="topRightLng" type="number" value="75.71887381374836" />
+        </div>
+        <div class="form-group">
+          <label for="initZoom">Initial Zoom</label>
+          <input id="initZoom" type="number" value="15" />
+        </div>
+        <div class="form-group">
+          <label>
+            Show Bounds
+            <input type="checkbox" id="showBounds" checked />
+          </label>
+        </div>
+        <div class="form-group">
+          <button id="btnRender">Draw Map</button>
+        </div>
+        <hr />
+
+        <div class="form-group">
+          <label for="zoomLevel">Zoom Level</label>
+          <input id="zoomLevel" type="number" step="1" value="15" />
+        </div>
+        <div class="form-group">
+          <label for="mapType">Map Type</label>
+          <select id="mapType">
+            <option value="ROADMAP">Roadmap</option>
+            <option value="HYBRID" selected>Satellite</option>
+            <option value="TERRAIN">Terrain</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <button id="btnUpdate">Update</button>
+        </div>
+        <hr />
+
+        <div class="form-group">
+          <button id="btnStart">Start Capturing</button>
+        </div>
+        <div class="form-group">
+          <button id="btnEndSession">End Session</button>
+        </div>
+        <hr />
+      </div>
+      <div id="map"></div>
+    </div>
+    <script src="public/index.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDyyq_Rfy0iZCm-blh7Y2UWuHSlYAKmu7s&callback=onMapReady&libraries=geometry"
+    async defer></script>
+  </body>
+</html>
+<!--
+  Controls:
+  zoom level
+  map type (roadmap | satellite | terrain)
+  route toggle
+-->
